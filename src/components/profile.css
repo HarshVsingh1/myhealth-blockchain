@@ -1,0 +1,37 @@
+.profileHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-color: rgb(219, 219, 219);
+}
+
+.profileHeadingText {
+ font-size: 50px;
+}
+
+.profileSectionHeading {
+    font-size: 30px;
+    font-family: "Roboto", sans-serif; 
+}
+
+.profileTextfieldContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.profileSubcontainer {
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+.profileSubcontainertwo {
+    display: flex; 
+    justify-content: space-between; 
+    margin-left: 45px;
+}
+
+.profileTextfieldHeading {
+ width: 120px;
+}

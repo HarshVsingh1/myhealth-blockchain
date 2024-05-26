@@ -1,0 +1,41 @@
+.doctorcard {
+ box-shadow: 1px 1px 50px rgb(6, 6, 6 , 0.1);
+ width: 240px;
+ padding: 10px;
+ border-radius: 10px;
+}
+
+.docProfileimage {
+    height: 50px;
+}
+
+.docProfilename {
+    font-family: "Roboto", sans-serif; 
+    font-size: 20px;
+}
+
+
+.miniContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.cardcen {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+   
+}
+
+
+.doctorCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+    height: 450px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,23 @@
+#navBar {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 5%;
+  }
+  
+  #navButton {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+  }
+  
+  .navButtons {
+    font-size: larger;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }    
+
+  #logo {
+    height: 30px;
+  }
