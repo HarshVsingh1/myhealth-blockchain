@@ -1,5 +1,5 @@
 import { Button, TextField } from '@mui/material'
-
+import Web3 from 'web3';
 import './profile.css'
 import { useState } from 'react'
 import axios from 'axios';
@@ -23,6 +23,7 @@ export default function Applydoctor() {
                 password  : ''
 
         }) 
+        const [amount,setAmount] = useState('0.00000045')
 
 
         const handlechange = (e) => {
@@ -41,7 +42,70 @@ export default function Applydoctor() {
           catch (error) {
                    console.log("error sending request")
           }
+        }  
+
+
+  const handleTransfer = async () => { 
+   
+        try {
+         
+          const web3 = new Web3(window.ethereum);
+          await window.ethereum.enable();
+    
+        
+          const accounts = await web3.eth.getAccounts();
+          const fromAddress = accounts[0];
+    
+          
+          const abi = [
+            {
+              "inputs": [
+                {
+                  "internalType": "address payable",
+                  "name": "toAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                }
+              ],
+              "name": "transferEther",
+              "outputs": [],
+              "stateMutability": "payable",
+              "type": "function"
+            }
+          ];
+          const contractAddress = '0x85A7Fa2815E4e486c25D373ca8e0762985aa77b3';
+          
+          const toAddress = '0x23073E14C00395c4cE85D9f79E2e25759e793a0e'
+     
+          const contract = new web3.eth.Contract(abi, contractAddress);
+         
+    
+    
+          
+          await contract.methods.transferEther(toAddress, web3.utils.toWei(amount, 'ether'))
+            .send({ from: fromAddress, value: web3.utils.toWei(amount, 'ether') })
+            .on('transactionHash', async(hash) => {
+             
+            
+             
+            
+             applyDoctor()
+            //   setTimeout(() => {
+            //     window.location.href = 'http://localhost:5173/order';
+            // }, 2000);
+              
+            });
+    
+    
+        } catch (error) {
+          console.error('Error:', error);
         }
+      };
+    
     return ( 
         <>
 
@@ -156,7 +220,7 @@ export default function Applydoctor() {
                                                </div>
 
                                                <div>
-                                               <Button onClick={() => { applyDoctor()}} variant="contained">Submit</Button>
+                                               <Button onClick={() => { handleTransfer()}} variant="contained">Submit</Button>
 
                                                </div>
                                              

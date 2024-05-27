@@ -74,7 +74,7 @@ function Signin() {
                   if(user === "user"){
                     navigate('/userdashboard') 
                   }
-                  if(user === "superuser"){
+                  if(user === "SuperUser"){
                     navigate('/superuserdashboard')
                   }
               }else {
@@ -127,7 +127,7 @@ function Signin() {
                              >
                                <MenuItem value={'admin'}>Admin</MenuItem>
                                <MenuItem value={'users'}>User</MenuItem>
-                               <MenuItem value={'superuser'}>SuperUser</MenuItem>
+                               <MenuItem value={'SuperUser'}>SuperUser</MenuItem>
                                
                              </Select>
                            </FormControl>

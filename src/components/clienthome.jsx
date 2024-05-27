@@ -29,7 +29,8 @@ export default function Clienthome() {
 
             fetch()
     },[]) 
-
+    
+    
     if(!doctors) {
         return (
             <div>

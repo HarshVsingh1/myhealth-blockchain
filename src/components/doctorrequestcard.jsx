@@ -90,9 +90,6 @@ export default function DoctorRequestCard  ({ doctor }) {
           <div>{doctor.fees} rs</div>
         </div>
         <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button onClick={book} variant="contained">Approve</Button>
-          </div>
         </div>
       </div>
     </div>

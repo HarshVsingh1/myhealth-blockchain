@@ -67,24 +67,7 @@ function Userdashboard() {
                                    </div>
                            </div>
 
-                           <div className='pannelSubSection' >
-                                   <div>
-                                      
-                                      <FormatListBulletedIcon sx={{color : "grey"}} ></FormatListBulletedIcon>
-                                   </div>
-                                   <div onClick={() => {handleButtonClick('applydoctor')}} className='pannelSectionText' >
-                                     Apply Doctor
-                                   </div>
-                           </div>
-                           <div className='pannelSubSection' >
-                                   <div>
-                                      
-                                      <FormatListBulletedIcon sx={{color : "grey"}} ></FormatListBulletedIcon>
-                                   </div>
-                                   <div onClick={() => {handleButtonClick('patient')}} className='pannelSectionText' >
-                                     Patient
-                                   </div>
-                           </div>
+                         
 
                           
 
@@ -116,18 +99,13 @@ function Userdashboard() {
                              </div>
                              </div>} 
                             {activeComponent === 'appointments' &&  "Appointment requests"  } 
-                            {activeComponent === 'patient' &&  ( <div className='profileHeading' >
-                              <div className='profileHeadingText' >
-                                 Manage Profile
-                              </div>
-                              </div>)}
+                         
                             
                            </div> 
                            <div className='mainContainer' >
                                {activeComponent === 'home' &&  <div > <Clienthome></Clienthome>  </div> }
                                 {activeComponent === 'appointments'  && <AppointmentTables></AppointmentTables>}
-                                {activeComponent === 'applydoctor'  &&    <Applydoctor></Applydoctor>}
-                                {activeComponent === "patient" && <SavePatient></SavePatient>}
+                              
                                 
                            </div>
                        </div>

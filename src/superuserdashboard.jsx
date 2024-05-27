@@ -6,9 +6,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import Sidenavbar from './components/sidenavbar';
 import { useState } from 'react';
-
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import { useNavigate } from 'react-router-dom';
 import DoctorRequest from './components/doctorrequest';
+import Applydoctor from './components/applydoctor';
+import SavePatient from './components/patients';
+import Patientdata from './components/patientdata';
 
 
 function SuperUserdashboard() { 
@@ -55,7 +58,33 @@ function SuperUserdashboard() {
                                    </div>
                            </div>
 
-                          
+                           <div className='pannelSubSection' >
+                                   <div>
+                                      
+                                      <FormatListBulletedIcon sx={{color : "grey"}} ></FormatListBulletedIcon>
+                                   </div>
+                                   <div onClick={() => {handleButtonClick('applydoctor')}} className='pannelSectionText' >
+                                     ApplyDoctor
+                                   </div>
+                           </div>
+                           <div className='pannelSubSection' >
+                                   <div>
+                                      
+                                      <FormatListBulletedIcon sx={{color : "grey"}} ></FormatListBulletedIcon>
+                                   </div>
+                                   <div onClick={() => {handleButtonClick('patient')}} className='pannelSectionText' >
+                                     Patient
+                                   </div>
+                           </div>
+                           <div className='pannelSubSection' >
+                                   <div>
+                                      
+                                      <FormatListBulletedIcon sx={{color : "grey"}} ></FormatListBulletedIcon>
+                                   </div>
+                                   <div onClick={() => {handleButtonClick('patientdata')}} className='pannelSectionText' >
+                                     Patients data
+                                   </div>
+                           </div>
 
                         
 
@@ -85,15 +114,27 @@ function SuperUserdashboard() {
                             {activeComponent === 'home' && 
                              <div className='profileHeading' >
                              <div className='profileHeadingText' >
-                                Approve Appointment
+                                Approved Doctors
                              </div>
                              </div>} 
+                             {activeComponent === 'patient' &&  ( <div className='profileHeading' >
+                              <div className='profileHeadingText' >
+                                 Manage Profile
+                              </div>
+                              </div>)}
+                             {activeComponent === 'patientdata' &&  ( <div className='profileHeading' >
+                              <div className='profileHeadingText' >
+                                PATIENTS data
+                              </div>
+                              </div>)}
                            
                             
                            </div> 
                            <div className='mainContainer' >
                                {activeComponent === 'home' &&  <div > <DoctorRequest></DoctorRequest>  </div> }
-                                
+                               {activeComponent === 'applydoctor'  &&    <Applydoctor></Applydoctor>}
+                                {activeComponent === "patientdata" && <Patientdata></Patientdata>}
+                                {activeComponent === "patient" && <SavePatient></SavePatient>}
                            </div>
                        </div>
                 </div>
